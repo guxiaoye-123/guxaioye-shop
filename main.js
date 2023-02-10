@@ -1,7 +1,8 @@
 import App from './App'
-
+import { myRequest } from './util/api.js'
 // #ifndef VUE3
 import Vue from 'vue'
+Vue.prototype.$myRequest = myRequest
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
