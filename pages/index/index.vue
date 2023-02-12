@@ -5,14 +5,56 @@
 				<img :src="item.img" alt="">
 			</swiper-item>
 		</swiper>
+		<!-- 导航区域 -->
+		<view class="nav">
+			<view class="nav_item" v-for="(item, index) in navs" :key="index" @click="navItemClick(item.path)">
+				<view :class="item.icon">					
+				</view>
+		    	<text>{{item.title}}</text>
+			</view>
+		
+		</view>
+		<!-- / 导航区域 -->
+		<!-- 推荐商品区域 -->
+		<view class="hot_goods">
+			<view class="tit">
+				推荐商品
+			</view>
+			<goods-list :goods="goods"></goods-list>
+		</view>
+		<!-- / 推荐商品区域 -->
 	</view>
 </template>
 
 <script>
+	import goodsList from '../../components/goods-list/goods-list'
 	export default {
 		data() {
 			return {
-				swipers: []
+				swipers: [],
+				goods: [],
+				navs:[
+					{
+						icon: 'iconfont icon-ziyuan',
+						title: '小夜超市',
+						path: '/pages/goods/goods'
+					},
+					{
+						icon: 'iconfont icon-guanyuwomen',
+						title: '联系我们',
+						path: '/pages/contact/contact'
+					},
+					{
+						icon: 'iconfont icon-tupian',
+						title: '社区图片',
+						path: '/pages/pics/pics'
+					},
+					{
+						icon: 'iconfont icon-shipin',
+						title: '学习视频',
+						path: '/pages/videos/videos'
+					}
+				]
 			}
 		},
 		onLoad() {
@@ -20,6 +62,10 @@
 		},
 		onLoad () {
 			this.getSwipers()
+			this.getHotGoods()
+		},
+		components: {
+			"goods-list": goodsList
 		},
 		methods: {
 			// 获取轮播图数据
@@ -39,8 +85,19 @@
 					url:'/api/getlunbo'
 				})
 				this.swipers = res.data.message
-				console.log(res);
 				
+			},
+			async getHotGoods () {
+				const res = await this.$myRequest({
+					url:'/api/getgoods?pageindex=1'
+				})
+				this.goods = res.data.message
+				
+			},
+			navItemClick (url) {
+				uni.navigateTo({
+					url
+				})
 			}
 		}
 	}
@@ -54,6 +111,43 @@
 		img {
 			height: 100%;
 			width: 100%;
+		}
+	}
+	.nav {
+		display: flex;
+		.nav_item {
+			width: 25%;
+			text-align: center;
+			view {
+				width: 120rpx;
+				height: 120rpx;
+				background: $shop-color;
+				border-radius: 60px;
+				margin: 10px auto;
+				line-height: 120rpx;
+				font-size: 50rpx;
+				color: #fff;
+			}
+			.icon-tupian {
+				font-size: 45rpx;
+			}
+			text {
+				font-size: 30rpx;
+			}
+		}
+	}
+    .hot_goods {
+		margin-top: 10px;
+	    overflow: hidden;
+		background: #eee;
+		.tit {
+			height: 50px;
+			line-height: 50px;
+			color: $shop-color;
+			text-align: center;
+			letter-spacing: 20px;
+			background: #fff;
+			margin: 7rpx 0;
 		}
 	}
 }
