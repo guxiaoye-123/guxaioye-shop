@@ -1,7 +1,7 @@
 {
     "name" : "gxy_shop",
-    "appid" : "",
-    "description" : "",
+    "appid" : "__UNI__199AE4B",
+    "description" : "一个普通的社区小商店",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -68,5 +68,14 @@
     "uniStatistics" : {
         "enable" : false
     },
-    "vueVersion" : "2"
+    "vueVersion" : "2",
+    "h5" : {
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : "7TABZ-UREO3-GZP3Q-YNI7T-6L3SQ-2JBQV"
+                }
+            }
+        }
+    }
 }

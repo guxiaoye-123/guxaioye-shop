@@ -9420,9 +9420,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!*************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Web前端开发/guxiaoye-shop/guxaioye-shop/pages.json ***!
-  \*************************************************************************************/
+/*!****************************************!*\
+  !*** F:/shop/guxaioye-shop/pages.json ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9563,9 +9563,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!**************************************************************************************!*\
-  !*** C:/Users/Administrator/Desktop/Web前端开发/guxiaoye-shop/guxaioye-shop/util/api.js ***!
-  \**************************************************************************************/
+/*!*****************************************!*\
+  !*** F:/shop/guxaioye-shop/util/api.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
