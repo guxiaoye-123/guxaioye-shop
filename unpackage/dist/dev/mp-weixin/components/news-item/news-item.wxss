@@ -24,30 +24,30 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.news .news_item {
+.news_item {
   display: flex;
   padding: 10rpx 20rpx;
   border-bottom: 1px solid #b50e03;
 }
-.news .news_item image {
+.news_item image {
   width: 200rpx;
   min-width: 200rpx;
   max-width: 200rpx;
   height: 150rpx;
 }
-.news .news_item .right {
+.news_item .right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 15rpx;
 }
-.news .news_item .right .tit {
+.news_item .right .tit {
   font-size: 30rpx;
 }
-.news .news_item .right .info {
+.news_item .right .info {
   font-size: 24rpx;
 }
-.news .news_item .right .info text:nth-child(2) {
+.news_item .right .info text:nth-child(2) {
   margin-left: 30rpx;
 }
 

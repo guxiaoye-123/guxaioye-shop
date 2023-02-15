@@ -20,7 +20,7 @@
 			<view class="tit">
 				推荐商品
 			</view>
-			<goods-list :goods="goods"></goods-list>
+			<goods-list :goods="goods" @goodsItemClick="goGoodsDetail"></goods-list>
 		</view>
 		<!-- / 推荐商品区域 -->
 	</view>
@@ -98,7 +98,14 @@
 				uni.navigateTo({
 					url
 				})
+			},
+			//跳转导航到商品详情页
+			goGoodsDetail (id) {
+				uni.navigateTo({
+					url:'/pages/goods-detail/goods-detail?id='+id
+				})
 			}
+			
 		}
 	}
 </script>

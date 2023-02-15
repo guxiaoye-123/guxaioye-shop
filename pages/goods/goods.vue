@@ -1,6 +1,6 @@
 <template>
 	<view class="goods_list">
-		<goods-list :goods="goods"></goods-list>
+		<goods-list @goodsItemClick="goGoodsDetail"  :goods="goods"></goods-list>
 		<view class="isOver" v-if="flag">
 			-----我是有底线的-----
 		</view>
@@ -28,6 +28,12 @@
 				})
 				this.goods = [...this.goods, ...res.data.message]
 				callBack && callBack()
+			},
+			//跳转导航到商品详情页
+			goGoodsDetail (id) {
+				uni.navigateTo({
+					url:'/pages/goods-detail/goods-detail?id='+id
+				})
 			}
 		},
 		onLoad() {
